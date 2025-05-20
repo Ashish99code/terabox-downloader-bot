@@ -1,23 +1,18 @@
-API_ID = 123456  # api id
-API_HASH = "ABC-DEF1234ghIkl-zyx57W2v1u123ew11"  # api hash
+import os
 
-BOT_TOKEN = "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11"  # bot token
+# Telegram Bot API Credentials
+API_ID = int(os.getenv("API_ID"))
+API_HASH = os.getenv("API_HASH")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+BOT_USERNAME = os.getenv("BOT_USERNAME", "Terabox_downloader_QRbot")
 
+# TeraBox Authentication
+COOKIE = os.getenv("COOKIE")
 
-# REDIS
-HOST = "localhost"  # redis host uri
-PORT = 6379  # redis port
-PASSWORD = ""  # redis password
+# Telegram Chat Config
+PRIVATE_CHAT_ID = int(os.getenv("PRIVATE_CHAT_ID", "-1001234567890"))
+ADMINS = [int(i) for i in os.getenv("ADMINS", "").split()]
 
-PRIVATE_CHAT_ID = -1001234567890  # CHAT WHERE YOU WANT TO STORE VIDEOS
-# COOKIE FOR AUTHENTICATION (get from chrome dev tools) ex: "PANWEB=1; csrfToken=;
-COOKIE = ""
-ADMINS = [1317173146]
-
-
-BOT_USERNAME = "teraboxdown_bot"
-
-# Force user to join this channel. (make sure you have promoted the bot on this chat.)
-FORCE_LINK = "@RoldexVerse"
-
-PUBLIC_EARN_API = ""  # https://publicearn.com/api
+# Optional Features
+FORCE_LINK = os.getenv("FORCE_LINK", "@RolodexVerse")
+PUBLIC_EARN_API = os.getenv("PUBLIC_EARN_API", "")
