@@ -11,6 +11,8 @@ API_HASH = get_env_var("API_HASH")
 BOT_TOKEN = get_env_var("BOT_TOKEN")
 BOT_USERNAME = get_env_var("BOT_USERNAME")
 COOKIE = get_env_var("COOKIE")
+PRIVATE_CHAT_ID = 5083063115
+
 
 # Redis Configuration
 HOST = os.getenv("REDIS_HOST", "localhost")
