@@ -78,7 +78,7 @@ class Redis(r):
 db = Redis(
     host=HOST,
     port=PORT,
-    password=PASSWORD if len(PASSWORD) > 1 else None,
+    password=PASSWORD if PASSWORD and len(PASSWORD) > 1 else None,
     decode_responses=True,
 )
 
