@@ -1,18 +1,20 @@
 import os
 
-# Telegram Bot API Credentials
-API_ID = int(os.getenv("API_ID"))
-API_HASH = os.getenv("API_HASH")
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-BOT_USERNAME = os.getenv("BOT_USERNAME", "Terabox_downloader_QRbot")
+def get_env_var(key, required=True):
+    value = os.getenv(key)
+    if required and not value:
+        raise Exception(f"Missing required environment variable: {key}")
+    return value
 
-# TeraBox Authentication
-COOKIE = os.getenv("COOKIE")
+API_ID = int(get_env_var("API_ID"))
+API_HASH = get_env_var("API_HASH")
+BOT_TOKEN = get_env_var("BOT_TOKEN")
+BOT_USERNAME = get_env_var("BOT_USERNAME")
+COOKIE = get_env_var("COOKIE")
 
-# Telegram Chat Config
-PRIVATE_CHAT_ID = int(os.getenv("PRIVATE_CHAT_ID", "-1001234567890"))
-ADMINS = [int(i) for i in os.getenv("ADMINS", "").split()]
+# Optional Redis settings
+HOST = os.getenv("HOST", "localhost")
+PORT = int(os.getenv("PORT", 6379))
+PASSWORD = os.getenv("PASSWORD")
 
-# Optional Features
-FORCE_LINK = os.getenv("FORCE_LINK", "@RolodexVerse")
-PUBLIC_EARN_API = os.getenv("PUBLIC_EARN_API", "")
+ADMINS = [5083063115]  # Replace with your real Telegram user ID
