@@ -12,9 +12,9 @@ BOT_TOKEN = get_env_var("BOT_TOKEN")
 BOT_USERNAME = get_env_var("BOT_USERNAME")
 COOKIE = get_env_var("COOKIE")
 
-# Optional Redis settings
-HOST = os.getenv("HOST", "localhost")
-PORT = int(os.getenv("PORT", 6379))
-PASSWORD = os.getenv("PASSWORD")
+# Redis Configuration
+HOST = os.getenv("REDIS_HOST", "localhost")
+PORT = int(os.getenv("REDIS_PORT", "6379"))
+PASSWORD = os.getenv("REDIS_PASSWORD", None)
 
 ADMINS = [5083063115]  # Replace with your real Telegram user ID
